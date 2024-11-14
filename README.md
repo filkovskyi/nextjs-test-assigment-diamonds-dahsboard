@@ -1,36 +1,165 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gaming Platform Project
+
+A modern gaming platform built with Next.js 14, featuring user authentication, virtual currency management, and game information integration.
+
+## Core Features
+
+### 1. User Authentication with Social Login
+- Multiple authentication providers (Google, GitHub)
+- Secure session management
+- Protected routes and API endpoints
+
+### 2. Virtual Currency System
+- Diamond purchase simulation
+- User-specific balance management
+- Secure payment flow simulation
+
+### 3. Game Information Integration
+- RAWG API integration
+- Game details and metadata
+- Search and filtering capabilities
+- Responsive game cards and layouts
+
+## Technical Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Authentication**: NextAuth.js
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **State Management**: Zustand
+- **API Integration**: RAWG API
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [repository-url]
+cd [project-name]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+```env
+# .env.local
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+openssl rand -base64 32
+```
+AUTH_SECRET="your-secret"
 
-## Learn More
+# Auth Providers
+AUTH_GOOGLE_ID="your-google-client-id"
+AUTH_GOOGLE_SECRET="your-google-client-secret"
+AUTH_GITHUB_ID="your-github-client-id"
+AUTH_GITHUB_SECRET="your-github-client-secret"
 
-To learn more about Next.js, take a look at the following resources:
+# RAWG API
+NEXT_PUBLIC_RAWG_API_KEY="your-rawg-api-key"
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Run the development server:
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Suggested Improvements
 
-## Deploy on Vercel
+### 1. Authentication Enhancements
+- [ ] Implement email verification
+- [ ] Add password recovery flow
+- [ ] Implement 2FA support
+- [ ] Add more social login providers
+- [ ] Create custom authentication pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2. Database Integration
+- [ ] Migrate from localStorage to Vercel Postgres
+- [ ] Implement transaction history
+- [ ] Add user profiles
+- [ ] Create admin dashboard
+- [ ] Add analytics tracking
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 3. RAWG API Integration
+- [ ] Add pagination support
+- [ ] Implement advanced search
+- [ ] Add sorting options
+- [ ] Implement filters (genre, platform, year)
+- [ ] Add game details page
+- [ ] Implement Suspense boundaries
+- [ ] Add loading states
+- [ ] Implement error boundaries
+
+## Testing Assignment Suggestions
+
+### 1. Authentication Tests
+```typescript
+describe('Authentication Flow', () => {
+  it('should successfully register a new user', async () => {
+    // Test user registration
+  })
+
+  it('should login with social providers', async () => {
+    // Test social login
+  })
+
+  it('should maintain session state', async () => {
+    // Test session persistence
+  })
+})
+```
+
+### 2. Diamond Purchase Tests
+```typescript
+describe('Diamond Purchase Flow', () => {
+  it('should update user balance after purchase', async () => {
+    // Test balance updates
+  })
+
+  it('should persist transaction history', async () => {
+    // Test transaction recording
+  })
+
+  it('should validate purchase amounts', async () => {
+    // Test input validation
+  })
+})
+```
+
+### 3. RAWG API Integration Tests
+```typescript
+describe('Game Data Integration', () => {
+  it('should fetch and display games list', async () => {
+    // Test API integration
+  })
+
+  it('should implement search functionality', async () => {
+    // Test search features
+  })
+
+  it('should handle pagination correctly', async () => {
+    // Test pagination
+  })
+})
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- Next.js team for the amazing framework
+- Vercel for hosting and database solutions
+- RAWG for their comprehensive games API
+- shadcn/ui for beautiful components
