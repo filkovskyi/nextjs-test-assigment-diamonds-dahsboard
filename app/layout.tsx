@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { inter } from "@/app/ui/fonts";
 import "./globals.css";
+import AuthProvider from '@/app/providers/session-provider'
 
 export const metadata: Metadata = {
   title: {
@@ -17,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+      </body>
     </html>
   );
 }
