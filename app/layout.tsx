@@ -7,8 +7,7 @@ export const metadata: Metadata = {
     template: '%s | Diamond Dashboard',
     default: 'Diamond Dashboard',
   },
-  description: 'Diamond Dashboard for premium shoping',
-  metadataBase: new URL('git'),
+  description: 'Diamond Dashboard for premium quality'
 };
 
 export default function RootLayout({
